@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SchoolController;
-use App\Livewire\SchoolComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
