@@ -37,7 +37,6 @@ class SchoolController extends Controller
         School::create($request->all());
         return redirect()->route('schools.index')
             ->with('success', 'School created successfully.');
-
     }
 
     /**
