@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ReservationStoreRequest extends FormRequest
@@ -17,7 +18,7 @@ class ReservationStoreRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
@@ -25,8 +26,8 @@ class ReservationStoreRequest extends FormRequest
             'course_title' => 'required|max:255',
             'course_code' => 'required|max:255',
             'comments' => 'nullable',
-            'start_time' => 'required',
-            'finish_time' => 'nullable'
+            'start_time' => 'required|date',
+            'finish_time' => 'nullable|required|date|after:start_time'
         ];
     }
 }

@@ -36,7 +36,7 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="start_time">
                                 Start Time
                             </label>
-                            <input name="start_time" min="{{date('Y-m-d H:i:s')}}" value="{{old('start_time')}}" class="@error('start_time') border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="start_time" type="datetime-local" placeholder="Start Time">
+                            <input name="start_time" min="{{date('Y-m-d H:i')}}" value="{{old('start_time')}}" class="@error('start_time') border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="start_time" type="datetime-local" placeholder="Start Time">
                             @error('start_time')
                             <div class="text-sm text-red-600">{{ $message }}</div>
                             @enderror
@@ -45,7 +45,7 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="end_time">
                                 Finish Time
                             </label>
-                            <input name="finish_time" min="{{date('Y-m-d H:i:s')}}" value="{{old('finish_time')}}" class="@error('finish_time') border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="end_time" type="datetime-local" placeholder="Finish Time">
+                            <input name="finish_time" min="{{date('Y-m-d H:i')}}" value="{{old('finish_time')}}" class="@error('finish_time') border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="end_time" type="datetime-local" placeholder="Finish Time">
                             @error('finish_time')
                             <div class="text-sm text-red-600">{{ $message }}</div>
                             @enderror
