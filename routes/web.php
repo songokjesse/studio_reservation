@@ -50,11 +50,14 @@ Route::post('/make_reservation', function (ReservationStoreRequest $request) {
 Route::get('/dashboard', function () {
     $events = [];
     $reservations = \App\Models\Reservation::all();
+
     foreach ($reservations as $reservation) {
+        $start = $reservation->reservation_date .' ' .$reservation->start_time;
+        $end = $reservation->reservation_date .' ' .$reservation->finish_time;
         $events[] = [
             'title' => $reservation->course_title,
-            'start' => $reservation->start_time,
-            'end' => $reservation->finish_time,
+            'start' => $start,
+            'end' => $end,
         ];
     }
 
