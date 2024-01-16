@@ -10,10 +10,10 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['course_code', 'course_title', 'comments', 'user_id', 'start_time', 'finish_time'];
+    protected $fillable = ['staff_name','staff_email','staff_phone','course_code', 'course_title', 'comments', 'reservation_date', 'school_id', 'start_time', 'finish_time'];
 
-    public function user(): BelongsTo
+    public function school(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(School::class);
     }
 }

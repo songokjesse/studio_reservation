@@ -23,11 +23,16 @@ class ReservationStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'school_id' => 'required',
+            'staff_name' => 'required|max:255',
+            'staff_email' => 'required|max:255',
+            'staff_phone' => 'required|max:255',
             'course_title' => 'required|max:255',
             'course_code' => 'required|max:255',
             'comments' => 'nullable',
-            'start_time' => 'required|date',
-            'finish_time' => 'nullable|required|date|after:start_time'
+            'reservation_date' => 'required|date',
+            'start_time' => 'required|date_format:H:i',
+            'finish_time' => 'nullable|required|date_format:H:i|after:start_time'
         ];
     }
 }

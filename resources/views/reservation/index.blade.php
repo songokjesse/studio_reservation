@@ -18,7 +18,9 @@
                         <thead class="bg-green-900 text-white">
                         <tr>
                             <th class="px-6 py-2 text-xs text-white">#</th>
-                            <th class="px-6 py-2 text-xs text-white">Name</th>
+                            <th class="px-6 py-2 text-xs text-white">Staff Name</th>
+                            <th class="px-6 py-2 text-xs text-white">Staff Email</th>
+                            <th class="px-6 py-2 text-xs text-white">Staff Phone</th>
                             <th class="px-6 py-2 text-xs text-white">Course</th>
                             <th class="px-6 py-2 text-xs text-white">Start Time</th>
                             <th class="px-6 py-2 text-xs text-white">Finish Time</th>
@@ -28,7 +30,9 @@
                         @foreach($reservations as $reservation)
                             <tr>
                                 <td class="px-6 py-4">{{$loop->iteration}}</td>
-                                <td class="px-6 py-4">{{$reservation->user->name}}</td>
+                                <td class="px-6 py-4">{{$reservation->staff_name}}</td>
+                                <td class="px-6 py-4">{{$reservation->staff_email}}</td>
+                                <td class="px-6 py-4">{{$reservation->staff_phone}}</td>
                                 <td class="px-6 py-4">{{$reservation->course_code}} : {{$reservation->course_title}}</td>
                                 <td class="px-6 py-4">{{$reservation->start_time}}</td>
                                 <td class="px-6 py-4">{{$reservation->finish_time}}</td>
